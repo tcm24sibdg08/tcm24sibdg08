@@ -47,8 +47,9 @@ Fatura Automática: Após o pagamento ser registado, a fatura é automaticamente
 
 Validação e Integridade: A base de dados deve garantir que não existam sobreposições de reservas, através da verificação em tempo real da disponibilidade das mesas com base em data, hora e número de pessoas.
 
-
 Este modelo pressupõe que o sistema será utilizado tanto por clientes (em plataforma online) como por funcionários (num painel de gestão interno), exigindo mecanismos robustos de controlo, segurança e simultaneidade no acesso à base de dados. O sistema proposto não só resolve os problemas de gestão enfrentados atualmente, como prepara o restaurante para um crescimento sustentável e uma melhor experiência para o cliente.
+
+
 ---
 [< Previous](rei00.md) | [^ Main](/../../) | [Next >](rei02.md)
 :--- | :---: | ---: 
