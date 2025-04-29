@@ -16,12 +16,17 @@ Registo de cliente: **Inserção de nome e contacto para criação de conta no s
 
 
 - **Reserva de mesa:**
--Escolha do restaurante.
--Seleção de data e hora.
--Indicação do número de pessoas.
--Escolha do tipo de menu (normal ou aniversário).
--Seleção de mesa (caso aplicável).
--O sistema marca a mesa como “Pendente” durante 5 minutos até o cliente confirmar a reserva.
+Escolha do restaurante.
+
+Seleção de data e hora.
+
+Indicação do número de pessoas.
+
+Escolha do tipo de menu (normal ou aniversário).
+
+Seleção de mesa (caso aplicável).
+
+O sistema marca a mesa como “Pendente” durante 5 minutos até o cliente confirmar a reserva.
 
 
 - **Confirmação de reserva:** Finalização da reserva e geração de um número de reserva.
