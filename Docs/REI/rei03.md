@@ -67,18 +67,21 @@ Cada reserva pode ter um consumo associado (itens pedidos), mas cada consumo est
 - Consumo — Menu_Item → N:1
 Vários consumos podem referir-se ao mesmo item do menu (ex: várias pessoas pedem o mesmo prato).
 
-- Consumo — Funcionário → N:1
-Um funcionário pode registar vários consumos, mas cada consumo é registado por um único funcionário.
+- Menu_Item — Funcionário → N:1
+Um funcionário pode registar vários itens de vários consumos de outras reservas.
 
-- Reserva — Fatura → 1:1
-Cada reserva gera, no máximo, uma fatura; e cada fatura refere-se a uma única reserva.
+- Reserva — Fatura → 1:N
+Cada reserva pode fazer várias fatura.
 
 - Funcionário — Fatura → 1:N
 Um funcionário pode emitir várias faturas, mas cada fatura é emitida por apenas um funcionário.
 
 - Cliente — Fatura → 1:N
 Um cliente pode ter várias faturas (várias reservas ao longo do tempo), mas cada fatura refere-se a um único cliente.
-  
+
+- Menu_Item — Fatura → 1:N
+Cada fatura pode ter vários itens no menu
+
 ---
 
 ## Regras de negócio adicionais (Restrições)
