@@ -34,40 +34,40 @@ Registo de cliente: **Inserção de nome e contacto para criação de conta no s
 
 ### Funcionário
 O funcionário é um utilizador com permissões avançadas para gerir as operações do restaurante, tanto em reservas como em consumos. A sua interface é de uso interno e controlada por autenticação. As funcionalidades disponíveis para o funcionário são:
-**Autenticação no sistema** com credenciais internas.
+- **Autenticação no sistema** com credenciais internas.
 
 
-**Consulta de reservas ativas** por localização, data e hora.
+- **Consulta de reservas ativas** por localização, data e hora.
 
 
-**Reserva manual de mesa para cliente sem reserva.**
+- **Reserva manual de mesa para cliente sem reserva.**
 
 
 Não pode reservar mesas em estado “Pendente”.
 
 
-- Pode registar reservas para qualquer número de pessoas.
+Pode registar reservas para qualquer número de pessoas.
 
 
 - **Alteração de estado da mesa:**
 
 
-- Atualizar manualmente uma mesa para “Disponível” após o serviço.
+  Atualizar manualmente uma mesa para “Disponível” após o serviço.
 
 
 - **Registo de consumos por mesa:**
 
 
-- Escolha de itens do menu.
+  Escolha de itens do menu.
 
 
-- Inserção da quantidade.
+  Inserção da quantidade.
 
 
-- O sistema calcula automaticamente o valor total da linha.
+  O sistema calcula automaticamente o valor total da linha.
 
 
-- Associação ao ID da mesa, reserva e funcionário.
+  Associação ao ID da mesa, reserva e funcionário.
 
 
 - **Consulta do total acumulado de consumos por mesa em tempo real.**
