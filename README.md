@@ -46,10 +46,10 @@ Foi desenhado um sistema que permite:
 
 ---
 
-## Grupo
+## Group 08
 
-- Carolina Silva  
-- Mafalda Nunes 
+* Carolina Silva [@CarolinaSilva](https://github.com/carolinalimasantosilva)
+* Mafalda Nunes [@MafaldaNunes](https://github.com/Mafas-07)
 
 ---
 
