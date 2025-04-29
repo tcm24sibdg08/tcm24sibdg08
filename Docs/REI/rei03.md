@@ -64,8 +64,8 @@ Uma reserva pode usar várias mesas, e uma mesa pode ser usada em várias reserv
 - Reserva — Consumo → 1:1
 Cada reserva pode ter um consumo associado (itens pedidos), mas cada consumo está ligado a uma única reserva.
 
-- Consumo — Menu_Item → N:1
-Vários consumos podem referir-se ao mesmo item do menu (ex: várias pessoas pedem o mesmo prato).
+- Consumo — Menu_Item → 1:N
+Um consumo pode ter vários itens do menu.
 
 - Menu_Item — Funcionário → N:1
 Um funcionário pode registar vários itens de vários consumos de outras reservas.
