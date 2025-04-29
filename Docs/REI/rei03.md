@@ -13,51 +13,114 @@ O sistema foi modelado com recurso ao Modelo Entidade-Associação, refletindo a
 
 ### Entidades
 
-#### Restaurante
-Cada restaurante tem um identificador único, localização completa (cidade, rua, número e código postal). Esta entidade permite organizar os diferentes espaços físicos onde as reservas podem ser efetuadas.
+####  Restaurante
+Representa uma das três localizações do restaurante. Cada restaurante tem uma morada distinta.
+Atributos: ID_Restaurante , Cidade , Rua, Número, Código_Postal
 
 #### Mesa
-Cada mesa pertence a um restaurante e é identificada por um número. Inclui ainda a capacidade máxima de pessoas e o seu estado atual (Disponível, Pendente, Reservada).
+Cada restaurante tem várias mesas. Cada mesa tem um número visível e um identificador único no sistema.
+Atributos: ID_Mesa , ID_Restaurante, Número_Mesa, Capacidade, Estado – Disponível | Pendente | Reservada
 
 #### Cliente
-Contém o número de cliente, nome e contacto. Os clientes são essenciais para o processo de reserva, sendo associados diretamente às mesmas.
+Utilizador que realiza uma reserva.
+Atributos:ID_Cliente , Nome, Contacto
 
-#### Funcionário
-Identificado por um ID, cada funcionário pode realizar reservas manuais, registar consumos e finalizar pagamentos. É associado aos consumos e faturas emitidas.
+####  Funcionário
+Funcionário do restaurante que pode criar reservas manuais, registar consumos e emitir faturas.
+Atributos: ID_Funcionário , Nome, Cargo
 
-#### Menu
-Lista todos os itens disponíveis no restaurante (entradas, pratos principais, bebidas, sobremesas), cada um com nome, descrição, tipo e preço.
+#### Reserva
+Ação de reservar uma ou mais mesas para um cliente, num restaurante, numa data/hora específica.
+Atributos:ID_Reserva, ID_Cliente, ID_Restaurante , Data_Hora_Reserva, Número_Pessoas, Tipo_Menu – Normal | Aniversário, Data_Criacao
 
-#### Item de Consumo
-Regista os itens consumidos numa mesa, incluindo a quantidade, valor unitário e total da linha. Cada consumo está ligado a uma reserva ativa e a um funcionário.
+####  Menu_Item
+Itens disponíveis no menu do restaurante. Um item pode pertencer ao menu normal, de aniversário ou ambos.
+Atributos:ID_Item , Nome, Descrição, Tipo_Item – Entrada, Prato, Bebida, Sobremesa, Tipo_Menu – Normal | Aniversário, Preço_Unitário
+
+#### Consumo
+Registo do que foi consumido numa reserva. Associado à mesa, ao funcionário que registou e aos itens do menu.
+Atributos:ID_Consumo , ID_Item , ID_Reserva , ID_Mesa , ID_Funcionário, Quantidade, Valor_Unitário, Total_Linha
+
+#### Fatura
+Documento gerado após o pagamento, com os detalhes do consumo.
+Atributos:ID_Fatura , ID_Reserva , ID_Cliente , ID_Funcionário, Subtotal, IVA, Total_Final , Data_Hora
 
 ---
 
 ### Associações
 
-#### Reserva
-Associação entre Cliente, Mesa e Restaurante. Uma reserva inclui data, hora, número de pessoas, tipo de menu e estado da mesa. Cada reserva é registada com uma data de criação.
+- Restaurante — Mesa → 1:N
+Um restaurante tem várias mesas, mas cada mesa pertence apenas a um restaurante.
 
-#### Consumo
-Associação entre Funcionário, Item do Menu e Mesa (via Reserva). Permite registar o que foi consumido por cada grupo de clientes, atribuindo a responsabilidade ao funcionário que registou.
+- Restaurante — Reserva → 1:N
+Um restaurante pode ter muitas reservas, mas cada reserva ocorre num único restaurante.
 
-#### Composição do Menu
-Ligação entre Menu e Item de Consumo, indicando quais os pratos disponíveis e escolhidos.
+- Cliente — Reserva → 1:N
+Um cliente pode fazer várias reservas, mas cada reserva pertence a um único cliente.
 
+- Reserva — Mesa → N:M (via Reserva_Mesa)
+Uma reserva pode usar várias mesas, e uma mesa pode ser usada em várias reservas (em momentos diferentes). É corretamente modelado por uma associação.
+
+- Reserva — Consumo → 1:N
+Cada reserva pode ter vários consumos associados (itens pedidos), mas cada consumo está ligado a uma única reserva.
+
+- Consumo — Menu_Item → N:1
+Vários consumos podem referir-se ao mesmo item do menu (ex: várias pessoas pedem o mesmo prato).
+
+- Consumo — Funcionário → N:1
+Um funcionário pode registar vários consumos, mas cada consumo é registado por um único funcionário.
+
+- Reserva — Fatura → 1:1
+Cada reserva gera, no máximo, uma fatura; e cada fatura refere-se a uma única reserva.
+
+- Funcionário — Fatura → 1:N
+Um funcionário pode emitir várias faturas, mas cada fatura é emitida por apenas um funcionário.
+
+- Cliente — Fatura → 1:N
+Um cliente pode ter várias faturas (várias reservas ao longo do tempo), mas cada fatura refere-se a um único cliente.
+  
 ---
 
 ## Regras de negócio adicionais (Restrições)
 
-As seguintes regras não são diretamente representadas no modelo E/A, mas são fundamentais para garantir a integridade e consistência do sistema:
 
-- Uma mesa em estado "Pendente" fica reservada temporariamente por 5 minutos. Se não for confirmada, volta a "Disponível".
-- Mesas não podem ser reservadas manualmente por funcionários se estiverem "Pendente".
-- Grupos com mais de 8 pessoas não podem escolher a mesa – o sistema seleciona automaticamente mesas compatíveis.
-- A mesa só muda para "Disponível" após o funcionário registar o pagamento.
-- Não é possível efetuar reservas sobrepostas em data/hora para a mesma mesa.
-- Após almoço ou jantar, a mesa só muda de estado por ação manual do funcionário.
-- Faturas apenas são emitidas após o registo do pagamento manual.
-- A quantidade e o preço dos itens consumidos devem ser consistentes com o menu pré-definido.
+
+- **Gestão de Estados da Mesa**
+Uma mesa em estado "Pendente" fica temporariamente reservada por 5 minutos. Se não for confirmada, volta automaticamente a "Disponível".
+
+Funcionários não podem reservar manualmente mesas em estado "Pendente".
+
+Após o almoço ou jantar, a mesa só muda de estado (para “Disponível”) por ação manual do funcionário.
+
+A mesa só fica “Disponível” após o registo de pagamento manual e emissão da fatura.
+
+Não é possível efetuar reservas sobrepostas na mesma data/hora para a mesma mesa.
+
+- **Regras para Grupos**
+Reservas com mais de 8 pessoas não podem escolher a mesa manualmente — o sistema escolhe automaticamente mesas compatíveis (em número e capacidade).
+
+- **Pagamentos e Faturação**
+As faturas só são emitidas após o registo de pagamento manual feito por um funcionário.
+
+Só pode haver uma fatura por reserva.
+
+A mesa é libertada (estado = “Disponível”) após o pagamento e emissão da fatura.
+
+- **Menu e Consumos**
+Quantidade e preço dos itens consumidos devem ser consistentes com o menu pré-definido (preço puxado automaticamente).
+
+Apenas funcionários podem registar consumos, e apenas para reservas ativas.
+
+Os itens consumidos devem pertencer ao tipo de menu escolhido na reserva (Normal ou Aniversário).
+
+O total do consumo é calculado automaticamente (quantidade × preço), e o total da fatura inclui IVA (se aplicável).
+
+- **Tempo e Reserva**
+A data da reserva não pode ser anterior à data atual (sem reservas retroativas).
+
+A data de criação da reserva deve ser registada obrigatoriamente.
+
+O sistema valida automaticamente a disponibilidade de mesas no momento da reserva, evitando sobreposições.
 
 ---
 
