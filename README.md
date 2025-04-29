@@ -25,6 +25,15 @@ Um sistema que permite:
 
 ---
 
+## Estado das Mesas
+
+| Estado     | Descrição |
+|------------|-----------|
+| Disponível | Mesa livre para reservas |
+| Pendente   | Selecionada por um cliente durante o processo de reserva (até 5 min) |
+| Reservada  | Confirmada por cliente ou funcionário |
+
+
 ## Organização do Repositório
 
 - Relatório de especificação da informação: [Docs/REI](Docs/REI)
@@ -38,29 +47,9 @@ Um sistema que permite:
 
 ---
 
-## Relatórios
-
-### REI - Relatório de Especificação de Informação
-- [REI00](Docs/REI/rei00.md)
-- [REI01](Docs/REI/rei01.md)
-- [REI02](Docs/REI/rei02.md)
-- [REI03](Docs/REI/rei03.md)
-
----
-
 ## Group 08
 
 * Carolina Silva [@CarolinaSilva](https://github.com/carolinalimasantosilva)
 * Mafalda Nunes [@MafaldaNunes](https://github.com/Mafas-07)
-
----
-
-## Estado das Mesas
-
-| Estado     | Descrição |
-|------------|-----------|
-| Disponível | Mesa livre para reservas |
-| Pendente   | Selecionada por um cliente durante o processo de reserva (até 5 min) |
-| Reservada  | Confirmada por cliente ou funcionário |
 
 ---
