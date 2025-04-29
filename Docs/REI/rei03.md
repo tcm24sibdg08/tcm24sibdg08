@@ -8,7 +8,6 @@ O sistema foi modelado com recurso ao Modelo Entidade-Associação, refletindo a
 
 ![Modelo Entidade-Associação do sistema de reservas](images/ea_model_restaurante.png)
 
-> *Figura 1: Diagrama conceptual do sistema que representa as entidades principais como Restaurante, Mesa, Cliente, Reserva, Funcionário, Menu e Consumo, bem como as suas associações e atributos relevantes.*
 
 ---
 
