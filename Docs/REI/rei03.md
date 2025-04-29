@@ -39,7 +39,7 @@ Atributos:ID_Item , Nome, Descrição, Tipo_Item – Entrada, Prato, Bebida, Sob
 
 #### Consumo
 Registo do que foi consumido numa reserva. Associado à mesa, ao funcionário que registou e aos itens do menu.
-Atributos:ID_Consumo , ID_Item , ID_Reserva , ID_Mesa , ID_Funcionário, Quantidade, Valor_Unitário, Total_Linha
+Atributos:ID_Consumo , ID_Item , ID_Reserva , ID_Mesa , ID_Funcionário, Quantidade, Valor_Unidade, Total_Linha
 
 #### Fatura
 Documento gerado após o pagamento, com os detalhes do consumo.
