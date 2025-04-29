@@ -142,6 +142,6 @@ Configurações gerais de funcionamento.
 
 ---
 
-| [< Previous](REI01.md) | [^ Main](../../README.md) | [Next >](REI03.md) |
+| [< Previous](rei01.md) | [^ Main](../../README.md) | [Next >](rei03.md) |
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
 
