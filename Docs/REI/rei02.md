@@ -6,7 +6,7 @@ De acordo com cada ator existem funcionalidades distintas, e a confusão e atrib
 
 Atores e as suas funcionalidades e permissões:
 
-### Cliente
+## Cliente
 O cliente acede ao sistema através de uma interface online (website) e tem como objetivo principal realizar reservas. As funcionalidades disponíveis para o cliente são:
 Registo de cliente: **Inserção de nome e contacto para criação de conta no sistema.
 - **Autenticação:** Login no sistema para aceder ao seu histórico e realizar reservas.
@@ -37,7 +37,7 @@ O sistema marca a mesa como “Pendente” durante 5 minutos até o cliente conf
 
 - **Consulta de reservas anteriores (histórico).**
 
-### Funcionário
+## Funcionário
 O funcionário é um utilizador com permissões avançadas para gerir as operações do restaurante, tanto em reservas como em consumos. A sua interface é de uso interno e controlada por autenticação. As funcionalidades disponíveis para o funcionário são:
 - **Autenticação no sistema** com credenciais internas.
 
@@ -82,7 +82,7 @@ Pode registar reservas para qualquer número de pessoas.
 
 - **Consulta de histórico de reservas e consumos.**
   
-### Administrador (Gestor)
+## Administrador (Gestor)
 O administrador ou gestor tem acesso total ao sistema e às funcionalidades de configuração e gestão geral. Este perfil é responsável por supervisionar o sistema e manter os dados atualizados. As suas funcionalidades incluem:
 - **Autenticação segura com perfil de administrador.**
 
