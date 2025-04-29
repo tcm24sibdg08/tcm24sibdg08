@@ -7,7 +7,7 @@ O trabalho consiste no desenvolvimento de um sistema de base de dados destinado 
 ## Descrição do Problema
 
 
-O objetivo principal é solucionar os problemas atuais enfrentados pelo restaurante, que incluem conflitos de reservas, duplicação de horários, dificuldade na gestão das mesas disponíveis e ineficiência na associação dos pedidos de cada mesa e respetivada emissão de fatura que anteriormente eram realizadas à mão. 
+O objetivo principal é solucionar os problemas atuais enfrentados pelo restaurante, que incluem conflitos de reservas, duplicação de horários, dificuldade na gestão das mesas disponíveis e ineficiência na associação dos pedidos de cada mesa (que anteriormente eram realizadas à mão) e respetiva emissão de fatura. 
 
 ---
 
