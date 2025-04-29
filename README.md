@@ -1,24 +1,25 @@
-# tcm24sibdg08
+# EatAround - Restaurantes
+O trabalho consiste no desenvolvimento de um sistema de base de dados destinado à gestão de reservas e pedidos de um restaurante com três localizações distintas. 
 
-# Sistema de Gestão de Reservas e Consumos para Restaurantes
-
-Desenvolver um sistema de base de dados que permita organizar reservas, associar consumos e gerar faturas automaticamente em restaurantes com múltiplas localizações, garantindo uma gestão mais eficiente, redução de conflitos e melhor experiência para o cliente.
 
 ---
 
 ## Descrição do Problema
 
-Um restaurante com 3 localizações distintas enfrenta dificuldades na gestão de reservas de mesas. A desorganização atual resulta em conflitos de horários, reservas duplicadas, trocas de mesas e confusão com os consumos dos clientes. É também necessário melhorar a emissão de faturas e o registo de itens consumidos durante o serviço.
+
+O objetivo principal é solucionar os problemas atuais enfrentados pelo restaurante, que incluem conflitos de reservas, duplicação de horários, dificuldade na gestão das mesas disponíveis e ineficiência na associação dos pedidos de cada mesa e respetivada emissão de fatura que anteriormente eram realizadas à mão. 
 
 ---
 
 ## Solução Proposta
 
-Foi desenhado um sistema que permite:
+Um sistema que permite:
 - Reservar mesas com base na localização, data, hora, número de pessoas e tipo de menu.
+- Reservas online pelo cliente e pelo funcionário (clientes pessoalmente)
+- Gestão de multiplas localizações
 - Atribuir automaticamente mesas em caso de grupos com mais de 8 pessoas.
 - Gerir o estado das mesas (Disponível, Pendente, Reservada).
-- Registar consumos por mesa e calcular automaticamente o total da conta.
+- Registar cada pedido por mesa e calcular automaticamente o total da conta.
 - Emitir faturas detalhadas após o pagamento.
 - Evitar reservas sobrepostas e validar automaticamente a disponibilidade.
 
@@ -27,8 +28,11 @@ Foi desenhado um sistema que permite:
 ## Organização do Repositório
 
 - Documentação disponível na pasta [`docs`](Docs/)
-- Relatórios específicos na pasta [`docs/REI`](Docs/REI/)
-
+- Relatório de especificação da informação
+- [REI00](Docs/REI/rei00.md)
+- [REI01](Docs/REI/rei01.md)
+- [REI02](Docs/REI/rei02.md)
+- [REI03](Docs/REI/rei03.md)
 ---
 
 ## Tecnologias Utilizadas
@@ -63,15 +67,5 @@ Foi desenhado um sistema que permite:
 | Disponível | Mesa livre para reservas |
 | Pendente   | Selecionada por um cliente durante o processo de reserva (até 5 min) |
 | Reservada  | Confirmada por cliente ou funcionário |
-
----
-
-## Funcionalidades em Destaque
-
-- **Reservas online e manuais**
-- **Associação entre mesas, reservas e clientes**
-- **Gestão de múltiplas localizações**
-- **Registo detalhado de consumos**
-- **Faturação automática após pagamento**
 
 ---
