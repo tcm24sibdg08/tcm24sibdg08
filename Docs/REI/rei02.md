@@ -9,13 +9,13 @@ Atores e as suas funcionalidades e permissões:
 #### Cliente
 O cliente acede ao sistema através de uma interface online (website) e tem como objetivo principal realizar reservas. As funcionalidades disponíveis para o cliente são:
 Registo de cliente: **Inserção de nome e contacto para criação de conta no sistema.
-**Autenticação: **Login no sistema para aceder ao seu histórico e realizar reservas.
+- **Autenticação: **Login no sistema para aceder ao seu histórico e realizar reservas.
 
 
-**Consulta de disponibilidade: **Verificação de disponibilidade de mesas por restaurante, data e hora.
+- **Consulta de disponibilidade: **Verificação de disponibilidade de mesas por restaurante, data e hora.
 
 
-** Reserva de mesa:**
+- ** Reserva de mesa:**
 -Escolha do restaurante.
 -Seleção de data e hora.
 -Indicação do número de pessoas.
