@@ -27,7 +27,7 @@ Um sistema que permite:
 
 ## Organização do Repositório
 
-- Relatório de especificação da informação
+- Relatório de especificação da informação: [Docs/REI](Docs/REI)
 - [REI00](Docs/REI/rei00.md)
 - [REI01](Docs/REI/rei01.md)
 - [REI02](Docs/REI/rei02.md)
