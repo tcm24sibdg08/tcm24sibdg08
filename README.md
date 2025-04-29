@@ -27,7 +27,6 @@ Um sistema que permite:
 
 ## Organização do Repositório
 
-- Documentação disponível na pasta [`docs`](Docs/)
 - Relatório de especificação da informação
 - [REI00](Docs/REI/rei00.md)
 - [REI01](Docs/REI/rei01.md)
