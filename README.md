@@ -41,11 +41,8 @@ Foi desenhado um sistema que permite:
 
 ## Relatórios
 
-### Proposta
-- [Proposta de Tema](docs/REI/proposta.md)
-
 ### REI - Relatório de Especificação de Informação
-- [REI00](docs/REI/REI00.md)
+- [REI00](Docs/REI/rei00.md)
 
 ---
 
