@@ -30,7 +30,7 @@ Um sistema que permite:
 | Estado     | Descrição |
 |------------|-----------|
 | Disponível | Mesa livre para reservas |
-| Pendente   | Selecionada por um cliente durante o processo de reserva (até 5 min) |
+| Pendente   | Selecionada por um cliente ou funcionário mas ainda não confirmada/concluída (até 5 min) |
 | Reservada  | Confirmada por cliente ou funcionário |
 
 
