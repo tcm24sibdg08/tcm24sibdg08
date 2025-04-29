@@ -11,13 +11,13 @@ O sistema proposto representa uma solução completa e integrada para as necessi
 
 # Modelação do problema
 A modelação do problema baseia-se nos seguintes pressupostos:
-Três Localizações Distintas: O sistema deve ser capaz de gerir de forma independente os três restaurantes, cada um com a sua própria estrutura de mesas, localização e reservas. Cada restaurante terá um identificador único (ID).
+- **Três Localizações Distintas:** O sistema deve ser capaz de gerir de forma independente os três restaurantes, cada um com a sua própria estrutura de mesas, localização e reservas. Cada restaurante terá um identificador único (ID).
 
 
-Gestão de Mesas por Restaurante: Cada restaurante possui um conjunto de mesas identificadas por número e capacidade máxima de pessoas. As mesas não são partilhadas entre restaurantes.
+- **Gestão de Mesas por Restaurante:** Cada restaurante possui um conjunto de mesas identificadas por número e capacidade máxima de pessoas. As mesas não são partilhadas entre restaurantes.
 
 
-Reserva com Critérios Múltiplos: As reservas são feitas com base em múltiplos critérios — restaurante, data, hora, número de pessoas, tipo de menu e, quando aplicável, a seleção da mesa. Para grupos com mais de 8 pessoas, a alocação de mesas será feita automaticamente, utilizando a combinação de mesas disponíveis que satisfaça a capacidade necessária.
+- **Reserva com Critérios Múltiplos:** As reservas são feitas com base em múltiplos critérios — restaurante, data, hora, número de pessoas, tipo de menu e, quando aplicável, a seleção da mesa. Para grupos com mais de 8 pessoas, a alocação de mesas será feita automaticamente, utilizando a combinação de mesas disponíveis que satisfaça a capacidade necessária.
 
 
 Estados da Mesa:
