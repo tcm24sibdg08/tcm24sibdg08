@@ -26,9 +26,8 @@ Foi desenhado um sistema que permite:
 
 ## Organização do Repositório
 
-- Código-fonte disponível na pasta [`src`](src/)
-- Documentação disponível na pasta [`docs`](docs/)
-- Relatórios específicos na pasta [`docs/REI`](docs/REI/)
+- Documentação disponível na pasta [`docs`](Docs/)
+- Relatórios específicos na pasta [`docs/REI`](Docs/REI/)
 
 ---
 
