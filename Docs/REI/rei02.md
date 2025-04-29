@@ -84,16 +84,16 @@ Pode registar reservas para qualquer número de pessoas.
   
 ### Administrador (Gestor)
 O administrador ou gestor tem acesso total ao sistema e às funcionalidades de configuração e gestão geral. Este perfil é responsável por supervisionar o sistema e manter os dados atualizados. As suas funcionalidades incluem:
-**Autenticação segura com perfil de administrador.**
+- **Autenticação segura com perfil de administrador.**
 
 
-**Gestão de utilizadores **(clientes e funcionários):
+- **Gestão de utilizadores**(clientes e funcionários):
 
 
-**Criação, edição e remoção de contas.**
+- **Criação, edição e remoção de contas.**
 
 
-**Gestão de restaurantes:**
+- **Gestão de restaurantes:**
 
 
 Inserção de novas localizações (cidade, rua, número, código postal).
@@ -102,7 +102,7 @@ Inserção de novas localizações (cidade, rua, número, código postal).
 Atualização de dados de localização.
 
 
-**Gestão de mesas:**
+- **Gestão de mesas:**
 
 
 Adição, edição ou remoção de mesas por restaurante.
@@ -111,7 +111,7 @@ Adição, edição ou remoção de mesas por restaurante.
 Definição da capacidade de cada mesa.
 
 
-**Gestão do menu:**
+- **Gestão do menu:**
 
 
 Inserção de novos itens (entradas, pratos, bebidas, sobremesas).
@@ -120,7 +120,7 @@ Inserção de novos itens (entradas, pratos, bebidas, sobremesas).
 Atualização de preços, descrições e categorias.
 
 
-**Consulta de relatórios:**
+- **Consulta de relatórios:**
 
 
 Histórico completo de reservas e consumos.
@@ -132,7 +132,7 @@ Estatísticas de ocupação por localização e horário.
 Relatórios financeiros (valores faturados, IVA, total por funcionário).
 
 
-**Parâmetros do sistema:**
+- **Parâmetros do sistema:**
 
 
 Definição do tempo máximo para estado “Pendente” (ex: 5 minutos).
