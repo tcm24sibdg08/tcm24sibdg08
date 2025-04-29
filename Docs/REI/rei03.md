@@ -61,8 +61,8 @@ Um cliente pode fazer várias reservas, mas cada reserva pertence a um único cl
 - Reserva — Mesa → N:M (via Reserva_Mesa)
 Uma reserva pode usar várias mesas, e uma mesa pode ser usada em várias reservas (em momentos diferentes). É corretamente modelado por uma associação.
 
-- Reserva — Consumo → 1:N
-Cada reserva pode ter vários consumos associados (itens pedidos), mas cada consumo está ligado a uma única reserva.
+- Reserva — Consumo → 1:1
+Cada reserva pode ter um consumo associado (itens pedidos), mas cada consumo está ligado a uma única reserva.
 
 - Consumo — Menu_Item → N:1
 Vários consumos podem referir-se ao mesmo item do menu (ex: várias pessoas pedem o mesmo prato).
