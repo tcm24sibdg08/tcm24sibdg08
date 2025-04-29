@@ -35,7 +35,7 @@ Atributos:ID_Reserva, ID_Cliente, ID_Restaurante , Data_Hora_Reserva, Número_Pe
 
 ####  Menu_Item
 Itens disponíveis no menu do restaurante. Um item pode pertencer ao menu normal, de aniversário ou ambos.
-Atributos:ID_Item , Nome, Descrição, Tipo_Item – Entrada, Prato, Bebida, Sobremesa, Tipo_Menu – Normal | Aniversário, Preço_Unitário
+Atributos:ID_Item , Nome, Descrição, Tipo_Item – Entrada, Prato, Bebida, Sobremesa, Tipo_Menu – Normal | Aniversário, Preço_Unidade
 
 #### Consumo
 Registo do que foi consumido numa reserva. Associado à mesa, ao funcionário que registou e aos itens do menu.
