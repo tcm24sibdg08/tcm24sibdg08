@@ -23,13 +23,13 @@ A modelação do problema baseia-se nos seguintes pressupostos:
 Estados da Mesa:
 
 
-**Disponível:** Mesa livre, sem reserva associada.
+- **Disponível:** Mesa livre, sem reserva associada.
 
 
-Pendente: Mesa selecionada por cliente online ou pelo funcionário, mas ainda não confirmada. Expira após 5 minutos.
+- **Pendente:** Mesa selecionada por cliente online ou pelo funcionário, mas ainda não confirmada. Expira após 5 minutos.
 
 
-Reservada: Confirmação efetuada, mesa ocupada para aquele horário.
+- **Reservada:** Confirmação efetuada, mesa ocupada para aquele horário.
 
 
 Funcionamento Manual vs. Automático: Funcionários podem fazer reservas diretamente, mas não podem selecionar mesas que estejam pendentes. Deverá esperar que os 5 minutos passem. 
