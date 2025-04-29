@@ -23,7 +23,7 @@ Reserva com Critérios Múltiplos: As reservas são feitas com base em múltiplo
 Estados da Mesa:
 
 
-Disponível: Mesa livre, sem reserva associada.
+*Disponível: * Mesa livre, sem reserva associada.
 
 
 Pendente: Mesa selecionada por cliente online ou pelo funcionário, mas ainda não confirmada. Expira após 5 minutos.
