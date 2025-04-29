@@ -52,4 +52,3 @@ Este modelo pressupõe que o sistema será utilizado tanto por clientes (em plat
 ---
 [< Previous](rei00.md) | [^ Main](/../../) | [Next >](rei02.md)
 :--- | :---: | ---: 
-
