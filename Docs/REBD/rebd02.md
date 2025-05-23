@@ -127,5 +127,6 @@ O sistema valida automaticamente a disponibilidade de mesas no momento da reserv
 
 ---
 
-[< Previous](rebd01.md) | [^ Main](/../../) | Next >
-:--- | :---: | ---:
+| [< Previous](rebd01.md) | [^ Main](../../README.md) | [Next >](rebd03.md) |
+|:----------------------------------:|:----------------------------------:|:----------------------------------:|
+
