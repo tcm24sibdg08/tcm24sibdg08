@@ -194,5 +194,5 @@ Configurações gerais de funcionamento.
 
 ---
 
-| [< Previous](rebd00.md) | [^ Main](../../README.md) | [Next >](rebd03.md) |
+| [< Previous](rebd00.md) | [^ Main](../../README.md) | [Next >](rebd02.md) |
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
