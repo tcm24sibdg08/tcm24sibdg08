@@ -61,19 +61,6 @@ Atributos:ID_Fatura_Item, ID_Fatura , ID_Consumo_Item, Quantidade, Valor_Unidade
 
 ### Associações
 
-- Restaurante — Mesa → 1:N
-Um restaurante tem várias mesas.
-
-- Restaurante — Reserva → 1:N
-Uma reserva ocorre num restaurante
-
-- Reserva — Mesa → N:M
-Uma reserva pode usar várias mesas
-
-- Reserva_Mesa — Consumo → 1:1
-Cada mesa numa reserva tem um único consumo
-
-
 | Entidade A    | Entidade B    | Cardinalidade | Descrição                                   |
 | ------------- | ------------- | ------------- | ------------------------------------------- |
 | Restaurante   | Mesa          | 1\:N          | Um restaurante tem várias mesas             |
