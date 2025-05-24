@@ -33,54 +33,60 @@ Atributos: ID_Funcionário , Nome, Cargo
 Ação de reservar uma ou mais mesas para um cliente, num restaurante, numa data/hora específica.
 Atributos:ID_Reserva, ID_Cliente, ID_Restaurante , Data_Hora_Reserva, Número_Pessoas, Tipo_Menu – Normal | Aniversário, Data_Criacao
 
+#### Reserva_Mesa 
+Entidade associativa para relacionar id_Reserva e id_Mesa
+Atributos:ID_Reserva, ID_Mesa
+
 ####  Menu_Item
 Itens disponíveis no menu do restaurante. Um item pode pertencer ao menu normal, de aniversário ou ambos.
 Atributos:ID_Item , Nome, Descrição, Tipo_Item – Entrada, Prato, Bebida, Sobremesa, Tipo_Menu – Normal | Aniversário, Preço_Unidade
 
 #### Consumo
-Registo do que foi consumido numa reserva. Associado à mesa, ao funcionário que registou e aos itens do menu.
-Atributos:ID_Consumo , ID_Item , ID_Reserva , ID_Mesa , ID_Funcionário, Quantidade, Valor_Unidade, Total_Linha
+Um consumo é gerado para cada mesa usada numa reserva
+Atributos:ID_Consumo , ID_Reserva , ID_Mesa , ID_Funcionário,Estado_Pagamento-Pendente | Parcial | Pago
+
+#### Consumo_item
+É adicionado os pedidos feitos ,representa o que foi efetivamente consumido por item.
+Atributos:ID_Consumo_item , ID_Consumo, ID_Item , Quantidade,Valor_Unidade, Total_Linha
 
 #### Fatura
-Documento gerado após o pagamento, com os detalhes do consumo.
-Atributos:ID_Fatura , ID_Reserva , ID_Cliente , ID_Funcionário, Subtotal, IVA, Total_Final , Data_Hora
+Ligada aos itens que compõem parte ou total de um consumo.
+Atributos:ID_Fatura, ID_Cliente , ID_Funcionário,  Data_Hora, Subtotal, IVA, Total_Final
+
+#### Fatura_Item
+Permite faturas parciais de um consumo (ex: dividir conta).
+Atributos:ID_Fatura_Item, ID_Fatura , ID_Consumo_Item, Quantidade, Valor_Unidade, Total_Parcial
 
 ---
 
 ### Associações
 
 - Restaurante — Mesa → 1:N
-Um restaurante tem várias mesas, mas cada mesa pertence apenas a um restaurante.
+Um restaurante tem várias mesas.
 
 - Restaurante — Reserva → 1:N
-Um restaurante pode ter muitas reservas, mas cada reserva ocorre num único restaurante.
+Uma reserva ocorre num restaurante
 
-- Cliente — Reserva → 1:N
-Um cliente pode fazer várias reservas, mas cada reserva pertence a um único cliente.
+- Reserva — Mesa → N:M
+Uma reserva pode usar várias mesas
 
-- Reserva — Mesa → N:M (via Reserva_Mesa)
-Uma reserva pode usar várias mesas, e uma mesa pode ser usada em várias reservas (em momentos diferentes). É corretamente modelado por uma associação.
+- Reserva_Mesa — Consumo → 1:1
+Cada mesa numa reserva tem um único consumo
 
-- Reserva — Consumo → 1:1
-Cada reserva pode ter um consumo associado (itens pedidos), mas cada consumo está ligado a uma única reserva.
 
-- Consumo — Menu_Item → 1:N
-Um consumo pode ter vários itens do menu.
-
-- Menu_Item — Funcionário → N:1
-Um funcionário pode registar vários itens de vários consumos de outras reservas.
-
-- Reserva — Fatura → 1:N
-Cada reserva pode fazer várias fatura.
-
-- Funcionário — Fatura → 1:N
-Um funcionário pode emitir várias faturas, mas cada fatura é emitida por apenas um funcionário.
-
-- Cliente — Fatura → 1:N
-Um cliente pode ter várias faturas (várias reservas ao longo do tempo), mas cada fatura refere-se a um único cliente.
-
-- Menu_Item — Fatura → 1:N
-Cada fatura pode ter vários itens no menu
+| Entidade A    | Entidade B    | Cardinalidade | Descrição                                   |
+| ------------- | ------------- | ------------- | ------------------------------------------- |
+| Restaurante   | Mesa          | 1\:N          | Um restaurante tem várias mesas             |
+| Restaurante   | Reserva       | 1\:N          | Uma reserva ocorre num restaurante          |
+| Reserva       | Mesa          | N\:M          | Uma reserva pode usar várias mesas          |
+| Reserva\_Mesa | Consumo       | 1:1           | Cada mesa numa reserva tem um único consumo |
+| Consumo       | Consumo\_Item | 1\:N          | Um consumo tem várias linhas de item        |
+| Consumo\_Item | Menu\_Item    | N:1           | Cada linha refere-se a um item do menu      |
+| Consumo       | Fatura        | 1\:N          | Um consumo pode ter várias faturas          |
+| Fatura        | Fatura\_Item  | 1\:N          | Uma fatura inclui parte ou todo o consumo   |
+| Fatura\_Item  | Consumo\_Item | N:1           | Linha de fatura aponta para item consumido  |
+| Fatura        | Cliente       | N:1           | Uma fatura é associada a um cliente         |
+| Fatura        | Funcionário   | N:1           | Uma fatura é emitida por um funcionário     |
 
 ---
 
