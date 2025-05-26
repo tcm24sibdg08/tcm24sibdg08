@@ -64,5 +64,26 @@ Portanto, todas as relações estão em **3FN** e não há necessidade de aplica
 
 ---
 
+## Normalização do Esquema Relacional
+
+### 1FN - Primeira Forma Normal
+- Todos os atributos contêm valores atómicos (ex.: nome, capacidade, preço_unidade);
+- Não existem grupos repetitivos nem atributos multivalorados;
+- Cada célula contém apenas um valor por atributo.
+ Todas as relações estão na 1FN
+ 
+### 2FN - Segunda Forma Normal
+- A maioria das tabelas tem chaves primárias simples (id_cliente, id_mesa, id_reserva, etc.);
+- Relações com chave composta, como Reserva_Mesa(id_reserva, id_mesa), não têm atributos adicionais → logo, não existe dependência parcial;
+Todas as relações estão na 2FN.
+
+### 3FN - Terceira Forma Normal
+-Nenhum atributo não-chave depende de outro atributo não-chave;
+-Atributos como total_linha, total_parcial, subtotal, etc., são redundâncias derivadas calculáveis, mas aceites por motivos de desempenho — não violam a 3FN, pois dependem diretamente da chave.
+Todas as relações estão em 3FN.
+
+### Não há necessidade de aplicar BCNF, já que não há violações.
+
+
 | [< Previous](REBD02.md) | [^ Main](../../README.md) | [Next >](REBD04.md) |
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
