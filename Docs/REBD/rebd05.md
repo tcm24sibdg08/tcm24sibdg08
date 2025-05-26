@@ -7,7 +7,6 @@
 ```sql
 USE `restaurantes`;
 
--- Eliminar tabelas existentes na ordem correta (dependências)
 DROP TABLE IF EXISTS `Fatura_Item`;
 DROP TABLE IF EXISTS `Fatura`;
 DROP TABLE IF EXISTS `Consumo_Item`;
@@ -20,7 +19,6 @@ DROP TABLE IF EXISTS `Cliente`;
 DROP TABLE IF EXISTS `Funcionario`;
 DROP TABLE IF EXISTS `Restaurante`;
 
--- Criar tabela Restaurante
 CREATE TABLE IF NOT EXISTS `Restaurante` (
   `id_restaurante` INT PRIMARY KEY AUTO_INCREMENT,
   `cidade` VARCHAR(50) NOT NULL,
@@ -29,7 +27,6 @@ CREATE TABLE IF NOT EXISTS `Restaurante` (
   `codigo_postal` VARCHAR(10) NOT NULL
 );
 
--- Criar tabela Mesa
 CREATE TABLE IF NOT EXISTS `Mesa` (
   `id_mesa` INT PRIMARY KEY AUTO_INCREMENT,
   `id_restaurante` INT NOT NULL,
@@ -39,21 +36,18 @@ CREATE TABLE IF NOT EXISTS `Mesa` (
   FOREIGN KEY (`id_restaurante`) REFERENCES `Restaurante`(`id_restaurante`)
 );
 
--- Criar tabela Cliente
 CREATE TABLE IF NOT EXISTS `Cliente` (
   `id_cliente` INT PRIMARY KEY AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `contacto` VARCHAR(30) NOT NULL
 );
 
--- Criar tabela Funcionario
 CREATE TABLE IF NOT EXISTS `Funcionario` (
   `id_funcionario` INT PRIMARY KEY AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `cargo` VARCHAR(50) NOT NULL
 );
 
--- Criar tabela Reserva
 CREATE TABLE IF NOT EXISTS `Reserva` (
   `id_reserva` INT PRIMARY KEY AUTO_INCREMENT,
   `id_cliente` INT NOT NULL,
@@ -66,7 +60,6 @@ CREATE TABLE IF NOT EXISTS `Reserva` (
   FOREIGN KEY (`id_restaurante`) REFERENCES `Restaurante`(`id_restaurante`)
 );
 
--- Criar tabela Reserva_Mesa
 CREATE TABLE IF NOT EXISTS `Reserva_Mesa` (
   `id_reserva` INT NOT NULL,
   `id_mesa` INT NOT NULL,
@@ -75,7 +68,6 @@ CREATE TABLE IF NOT EXISTS `Reserva_Mesa` (
   FOREIGN KEY (`id_mesa`) REFERENCES `Mesa`(`id_mesa`)
 );
 
--- Criar tabela Menu_Item
 CREATE TABLE IF NOT EXISTS `Menu_Item` (
   `id_item` INT PRIMARY KEY AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
@@ -85,7 +77,6 @@ CREATE TABLE IF NOT EXISTS `Menu_Item` (
   `preco_unidade` DECIMAL(8,2) NOT NULL
 );
 
--- Criar tabela Consumo
 CREATE TABLE IF NOT EXISTS `Consumo` (
   `id_consumo` INT PRIMARY KEY AUTO_INCREMENT,
   `id_reserva` INT NOT NULL,
@@ -97,7 +88,6 @@ CREATE TABLE IF NOT EXISTS `Consumo` (
   FOREIGN KEY (`id_funcionario`) REFERENCES `Funcionario`(`id_funcionario`)
 );
 
--- Criar tabela Consumo_Item
 CREATE TABLE IF NOT EXISTS `Consumo_Item` (
   `id_consumo_item` INT PRIMARY KEY AUTO_INCREMENT,
   `id_consumo` INT NOT NULL,
@@ -109,7 +99,6 @@ CREATE TABLE IF NOT EXISTS `Consumo_Item` (
   FOREIGN KEY (`id_item`) REFERENCES `Menu_Item`(`id_item`)
 );
 
--- Criar tabela Fatura
 CREATE TABLE IF NOT EXISTS `Fatura` (
   `id_fatura` INT PRIMARY KEY AUTO_INCREMENT,
   `id_cliente` INT NOT NULL,
@@ -122,7 +111,6 @@ CREATE TABLE IF NOT EXISTS `Fatura` (
   FOREIGN KEY (`id_funcionario`) REFERENCES `Funcionario`(`id_funcionario`)
 );
 
--- Criar tabela Fatura_Item
 CREATE TABLE IF NOT EXISTS `Fatura_Item` (
   `id_fatura_item` INT PRIMARY KEY AUTO_INCREMENT,
   `id_fatura` INT NOT NULL,
