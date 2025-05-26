@@ -2,11 +2,11 @@
 
 ## Índice
 
-:[Introdução](rebd01.md)  
-:[Esquema conceptual](rebd02.md)  
-:[Normalização](rebd03.md)  
-:[Esquema relacional](rebd04.md)  
-:[SQL](rebd05.md)  
+C1:[Introdução](rebd01.md)  
+C2:[Esquema conceptual](rebd02.md)  
+C3:[Normalização](rebd03.md)  
+C4:[Esquema relacional](rebd04.md)  
+C5:[SQL](rebd05.md)  
 
 ## Group 08
 
