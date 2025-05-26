@@ -1,46 +1,54 @@
-Restaurante
-DESCRIÇÃO
-Regista os dados dos restaurantes disponíveis, cada um com uma morada única.
+# C4 : Esquema Relacional
 
-COLUNAS
+---
 
-Nome	Descrição	Domínio	Por Omissão	Automático	Nulo
-id_restaurante	Identificador do restaurante	INT	-	Sim	Não
-cidade	Cidade do restaurante	VARCHAR(50)	-	Não	Não
-rua	Rua do restaurante	VARCHAR(100)	-	Não	Não
-numero	Número da porta	VARCHAR(10)	-	Não	Não
-codigo_postal	Código Postal	VARCHAR(10)	-	Não	Não
+## Tabelas
 
-RESTRIÇÕES DE INTEGRIDADE
-Chave Primária:
+### Restaurante
 
-id_restaurante
+Regista os restaurantes com a sua localização.
 
-Mesa
-DESCRIÇÃO
-Contém as mesas disponíveis em cada restaurante, com capacidade e estado atual.
+| Nome            | Descrição                    | Domínio                           | Por Omissão | Automático | Nulo |
+| --------------- | ---------------------------- | --------------------------------- | ----------- | ---------- | ---- |
+| id\_restaurante | Identificador do restaurante | INT, PRIMARY KEY, AUTO\_INCREMENT | -           | Sim        | Não  |
+| cidade          | Cidade do restaurante        | VARCHAR(50) NOT NULL              | -           | Não        | Não  |
+| rua             | Rua do restaurante           | VARCHAR(100) NOT NULL             | -           | Não        | Não  |
+| numero          | Número da porta              | VARCHAR(10) NOT NULL              | -           | Não        | Não  |
+| codigo\_postal  | Código Postal                | VARCHAR(10) NOT NULL              | -           | Não        | Não  |
 
-COLUNAS
+### Mesa
 
-Nome	Descrição	Domínio	Por Omissão	Automático	Nulo
-id_mesa	Identificador da mesa	INT	-	Sim	Não
-id_restaurante	Restaurante associado	INT	-	Não	Não
-numero_mesa	Número visível da mesa	VARCHAR(10)	-	Não	Não
-capacidade	Número de lugares	INT	-	Não	Não
-estado	Estado atual da mesa	ENUM('Disponível','Pendente','Reservada')	'Disponível'	Não	Não
+Regista as mesas de cada restaurante, com capacidade e estado.
 
-RESTRIÇÕES DE INTEGRIDADE
-Chave Primária:
+| Nome            | Descrição                    | Domínio                                                  | Por Omissão  | Automático | Nulo |
+| --------------- | ---------------------------- | -------------------------------------------------------- | ------------ | ---------- | ---- |
+| id\_mesa        | Identificador da mesa        | INT, PRIMARY KEY, AUTO\_INCREMENT                        | -            | Sim        | Não  |
+| id\_restaurante | Identificador do restaurante | INT, FOREIGN KEY REFERENCES Restaurante(id\_restaurante) | -            | Não        | Não  |
+| numero\_mesa    | Número visível da mesa       | VARCHAR(10) NOT NULL                                     | -            | Não        | Não  |
+| capacidade      | Número de lugares            | INT NOT NULL                                             | -            | Não        | Não  |
+| estado          | Estado da mesa               | ENUM('Disponível','Pendente','Reservada') NOT NULL       | 'Disponível' | Não        | Não  |
 
-id_mesa
+### Cliente
 
-Referencial (chaves estrangeiras):
+Regista os clientes com dados de contacto.
 
-Nome	Coluna(s)	Tabela referenciada	Coluna(s) referenciada(s)	Indexar
-mesa_fk_rest	id_restaurante	Restaurante	id_restaurante	Sim
+| Nome        | Descrição                | Domínio                           | Por Omissão | Automático | Nulo |
+| ----------- | ------------------------ | --------------------------------- | ----------- | ---------- | ---- |
+| id\_cliente | Identificador do cliente | INT, PRIMARY KEY, AUTO\_INCREMENT | -           | Sim        | Não  |
+| nome        | Nome do cliente          | VARCHAR(100) NOT NULL             | -           | Não        | Não  |
+| contacto    | Contacto do cliente      | VARCHAR(30) NOT NULL              | -           | Não        | Não  |
 
-Atributos (check):
+### Funcionário
 
-Nome	Coluna(s)	Condição
-chk_estado	estado	estado IN ('Disponível','Pendente','Reservada')
+Regista os funcionários.
 
+| Nome            | Descrição                 | Domínio                           | Por Omissão | Automático | Nulo |
+| --------------- | ------------------------- | --------------------------------- | ----------- | ---------- | ---- |
+| id\_funcionario | Identificador funcionário | INT, PRIMARY KEY, AUTO\_INCREMENT | -           | Sim        | Não  |
+| nome            | Nome do funcionário       | VARCHAR(100) NOT NULL             | -           | Não        | Não  |
+| cargo           | Cargo do funcionário      | VARCHAR(50) NOT NULL              | -           | Não        | Não  |
+
+
+
+
+---
