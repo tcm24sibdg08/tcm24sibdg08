@@ -130,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `Fatura_Item` (
 ### Inserts (exemplos)
 
 ```sql
-
 INSERT INTO Cliente (nome, contacto) VALUES
 ('Ana Silva', '912345678'),
 ('João Pereira', '913456789'),
