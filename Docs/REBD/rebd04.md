@@ -139,6 +139,37 @@ Itens faturados numa fatura.
 
 ## Vistas Sql:
 
+### Vista_Reservas_Restaurante1
+Consultar todas reservas do dia do Restaurante do Porto
+
+```sql
+CREATE VIEW Vista_Reservas_Restaurante_Porto AS
+SELECT 
+    Reserva.id_reserva,
+    Cliente.nome AS nome_cliente,
+    Reserva.data_hora_reserva,
+    Reserva.numero_pessoas,
+    Reserva.tipo_menu,
+    GROUP_CONCAT(Mesa.numero_mesa ORDER BY Mesa.numero_mesa SEPARATOR ', ') AS mesas_reservadas,
+    Restaurante.cidade
+FROM 
+    Reserva
+JOIN Cliente ON Reserva.id_cliente = Cliente.id_cliente
+JOIN Reserva_Mesa ON Reserva.id_reserva = Reserva_Mesa.id_reserva
+JOIN Mesa ON Reserva_Mesa.id_mesa = Mesa.id_mesa
+JOIN Restaurante ON Reserva.id_restaurante = Restaurante.id_restaurante
+WHERE 
+    Restaurante.cidade = 'Porto'
+    AND DATE(Reserva.data_hora_reserva) = CURDATE()
+GROUP BY 
+    Reserva.id_reserva,
+    Cliente.nome,
+    Reserva.data_hora_reserva,
+    Reserva.numero_pessoas,
+    Reserva.tipo_menu,
+    Restaurante.cidade;
+
+```
 ---
 
 | [< Previous](rebd03.md) | [^ Main](../../README.md) | [Next >](rebd05.md) |
