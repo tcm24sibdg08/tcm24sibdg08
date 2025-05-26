@@ -11,8 +11,8 @@ Com base no modelo entidade-associação, derivam-se as seguintes relações:
 - **DF1:** id_restaurante → cidade, rua, numero, codigo_postal
 
 **Mesa**(id_mesa PK, numero_mesa, capacidade, estado, #id_restaurante → Restaurante)
-
-- **DF2:** id_mesa → numero_mesa, capacidade, estado, id_restaurante
+- **DF2:** id_mesa → numero_mesa, capacidade, estado
+- **Chave estrangeira:** id_restaurante
 
 **Cliente**(id_cliente PK, nome, contacto)
 
@@ -32,6 +32,7 @@ Com base no modelo entidade-associação, derivam-se as seguintes relações:
 
 **Consumo**(id_consumo PK, estado_pagamento, #id_reserva → Reserva, #id_mesa → Mesa, #id_funcionario → Funcionario)
 - **DF8:** id_consumo → estado_pagamento, id_reserva, id_mesa, id_funcionario
+- **Chave candidata:**(id_reserva, id_mesa) → id_consumo
 
 **Consumo_Item**(id_consumo_item PK, quantidade, valor_unidade, total_linha, #id_consumo → Consumo, #id_item → Menu_Item)
 - **DF9:** id_consumo_item → quantidade, valor_unidade, total_linha, id_consumo, id_item
