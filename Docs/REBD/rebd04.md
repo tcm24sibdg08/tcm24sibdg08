@@ -109,6 +109,32 @@ Itens consumidos numa consumação.
 | valor\_unidade    | Preço por unidade             | DECIMAL(8,2) NOT NULL                            | -           | Não        | Não  |
 | total\_linha      | Quantidade \* valor\_unidade  | DECIMAL(10,2) NOT NULL                           | -           | Não        | Não  |
 
+### Fatura
+
+Regista as faturas emitidas.
+
+| Nome            | Descrição               | Domínio                                                  | Por Omissão | Automático | Nulo |
+| --------------- | ----------------------- | -------------------------------------------------------- | ----------- | ---------- | ---- |
+| id\_fatura      | Identificador da fatura | INT, PRIMARY KEY, AUTO\_INCREMENT                        | -           | Sim        | Não  |
+| id\_cliente     | Cliente associado       | INT, FOREIGN KEY REFERENCES Cliente(id\_cliente)         | -           | Não        | Não  |
+| id\_funcionario | Funcionário emissor     | INT, FOREIGN KEY REFERENCES Funcionário(id\_funcionario) | -           | Não        | Não  |
+| data\_hora      | Data e hora da emissão  | DATETIME NOT NULL DEFAULT CURRENT\_TIMESTAMP             | NOW()       | Não        | Não  |
+| subtotal        | Valor antes do IVA      | DECIMAL(10,2) NOT NULL                                   | -           | Não        | Não  |
+| iva             | Valor do IVA            | DECIMAL(5,2) NOT NULL                                    | -           | Não        | Não  |
+| total\_final    | Valor total final       | DECIMAL(10,2) NOT NULL                                   | -           | Não        | Não  |
+
+### Fatura_Item
+
+Itens faturados numa fatura.
+
+| Nome              | Descrição               | Domínio                                                      | Por Omissão | Automático | Nulo |
+| ----------------- | ----------------------- | ------------------------------------------------------------ | ----------- | ---------- | ---- |
+| id\_fatura\_item  | Identificador da linha  | INT, PRIMARY KEY, AUTO\_INCREMENT                            | -           | Sim        | Não  |
+| id\_fatura        | Fatura associada        | INT, FOREIGN KEY REFERENCES Fatura(id\_fatura)               | -           | Não        | Não  |
+| id\_consumo\_item | Item consumido faturado | INT, FOREIGN KEY REFERENCES Consumo\_Item(id\_consumo\_item) | -           | Não        | Não  |
+| quantidade        | Quantidade faturada     | INT NOT NULL                                                 | -           | Não        | Não  |
+| valor\_unidade    | Valor por unidade       | DECIMAL(8,2) NOT NULL                                        | -           | Não        | Não  |
+| total\_parcial    | Total parcial da linha  | DECIMAL(10,2) NOT NULL                                       | -           | Não        | Não  |
 
 
 ---
