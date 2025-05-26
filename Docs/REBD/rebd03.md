@@ -7,25 +7,6 @@
 Com base no modelo entidade-associação, derivam-se as seguintes relações:
 
 **Restaurante**(id_restaurante PK, cidade, rua, numero, codigo_postal)
-- **DF1:**id_restaurante → cidade, rua, numero, codigo_postal
-
-**Mesa**(id_mesa PK, numero_mesa, capacidade, estado, #id_restaurante → Restaurante)
-- **DF2:** id_mesa → numero_mesa, capacidade, estado, id_restaurante
-
-**Cliente**(id_cliente PK, nome, contacto)
-- **DF3:**  id_cliente → nome, contacto
-
-**Agendamento**(id_agendamento PK, data, hora, status_confirmacao, #id_veiculo → Veiculo, #id_servico → Servico)
-- **DF4:** id_agendamento → data, hora, status_confirmacao, id_veiculo, id_servico
-
-**Historico**(id_historico PK, notas, #id_veiculo → Veiculo, #id_servico → Servico, #id_agendamento → Agendamento)
-- **DF5:** id_historico → notas, id_agendamento, id_veiculo, id_servico
-
-**Acao_Recomendada**(id_acao PK, descricao, data, status, #id_veiculo → Veiculo)
-- **DF6:** id_acao → descricao, data, status, id_veiculo
-
-
-**Restaurante**(id_restaurante PK, cidade, rua, numero, codigo_postal)
 -**DF1:** id_restaurante → cidade, rua, numero, codigo_postal
 
 **Mesa**(id_mesa PK, numero_mesa, capacidade, estado, #id_restaurante → Restaurante)
