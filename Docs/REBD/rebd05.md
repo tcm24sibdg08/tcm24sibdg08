@@ -128,3 +128,29 @@ CREATE TABLE IF NOT EXISTS `Fatura_Item` (
 ## DML
 
 ### Inserts (exemplos)
+
+```sql
+
+INSERT INTO Cliente (nome, contacto) VALUES
+('Ana Silva', '912345678'),
+('João Pereira', '913456789'),
+('Maria Fernandes', '914567890');
+
+INSERT INTO Restaurante (cidade, rua, numero, codigo_postal) VALUES
+('Porto', 'Rua do Almada', '45', '4000-123'),
+('Lisboa', 'Avenida da Liberdade', '100', '1250-001');
+
+INSERT INTO Mesa (id_restaurante, numero_mesa, capacidade, estado) VALUES
+(1, '1', 4, 'Disponível'),
+(1, '2', 2, 'Disponível'),
+(1, '3', 6, 'Disponível');
+
+INSERT INTO Reserva (id_cliente, id_restaurante, data_hora_reserva, numero_pessoas, tipo_menu) VALUES
+(1, 1, '2025-05-26 12:30:00', 2, 'Normal'),
+(2, 1, '2025-05-26 20:00:00', 4, 'Aniversário');
+
+INSERT INTO Reserva_Mesa (id_reserva, id_mesa) VALUES
+(1, 1),
+(2, 2),
+(2, 3);
+```
