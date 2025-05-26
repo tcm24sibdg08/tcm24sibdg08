@@ -140,7 +140,7 @@ Itens faturados numa fatura.
 ## Vistas Sql:
 
 ### Vista_Reservas_Restaurante1
-Consultar todas reservas do dia do Restaurante do Porto
+Consultar todas as reservas do dia, do Restaurante do Porto
 
 ```sql
 CREATE VIEW Vista_Reservas_Restaurante_Porto AS
