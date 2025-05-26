@@ -7,12 +7,15 @@
 Com base no modelo entidade-associação, derivam-se as seguintes relações:
 
 **Restaurante**(id_restaurante PK, cidade, rua, numero, codigo_postal)
+
 -**DF1:** id_restaurante → cidade, rua, numero, codigo_postal
 
 **Mesa**(id_mesa PK, numero_mesa, capacidade, estado, #id_restaurante → Restaurante)
+
 -**DF2:** id_mesa → numero_mesa, capacidade, estado, id_restaurante
 
 **Cliente**(id_cliente PK, nome, contacto)
+
 -**DF3:** id_cliente → nome, contacto
 
 **Funcionario**(id_funcionario PK, nome, cargo)
