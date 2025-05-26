@@ -70,5 +70,5 @@ Todas as relações estão em 3FN.
 
 ---
 
-| [< Previous](REBD02.md) | [^ Main](../../README.md) | [Next >](REBD04.md) |
+| [< Previous](rebd0202.md) | [^ Main](../../README.md) | [Next >](rebd04.md) |
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
