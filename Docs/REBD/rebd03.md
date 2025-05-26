@@ -8,39 +8,39 @@ Com base no modelo entidade-associação, derivam-se as seguintes relações:
 
 **Restaurante**(id_restaurante PK, cidade, rua, numero, codigo_postal)
 
--**DF1:** id_restaurante → cidade, rua, numero, codigo_postal
+- **DF1:** id_restaurante → cidade, rua, numero, codigo_postal
 
 **Mesa**(id_mesa PK, numero_mesa, capacidade, estado, #id_restaurante → Restaurante)
 
--**DF2:** id_mesa → numero_mesa, capacidade, estado, id_restaurante
+- **DF2:** id_mesa → numero_mesa, capacidade, estado, id_restaurante
 
 **Cliente**(id_cliente PK, nome, contacto)
 
--**DF3:** id_cliente → nome, contacto
+- **DF3:** id_cliente → nome, contacto
 
 **Funcionario**(id_funcionario PK, nome, cargo)
--**DF4:** id_funcionario → nome, cargo
+- **DF4:** id_funcionario → nome, cargo
 
 **Reserva**(id_reserva PK, data_hora_reserva, numero_pessoas, tipo_menu, data_criacao, #id_cliente → Cliente, #id_restaurante → Restaurante)
--**DF5:** id_reserva → data_hora_reserva, numero_pessoas, tipo_menu, data_criacao, id_cliente, id_restaurante
+- **DF5:** id_reserva → data_hora_reserva, numero_pessoas, tipo_menu, data_criacao, id_cliente, id_restaurante
 
 **Reserva_Mesa**(id_reserva PK, id_mesa PK,  #id_reserva → Reserva, #id_mesa → Mesa)
--**DF6:** (id_reserva, id_mesa) → [Relacionamento N:M]
+- **DF6:** (id_reserva, id_mesa) → [Relacionamento N:M]
 
 **Menu_Item**(id_item PK, nome, descricao, tipo_item, tipo_menu, preco_unidade)
--**DF7:** id_item → nome, descricao, tipo_item, tipo_menu, preco_unidade
+- **DF7:** id_item → nome, descricao, tipo_item, tipo_menu, preco_unidade
 
 **Consumo**(id_consumo PK, estado_pagamento, #id_reserva → Reserva, #id_mesa → Mesa, #id_funcionario → Funcionario)
--**DF8:** id_consumo → estado_pagamento, id_reserva, id_mesa, id_funcionario
+- **DF8:** id_consumo → estado_pagamento, id_reserva, id_mesa, id_funcionario
 
 **Consumo_Item**(id_consumo_item PK, quantidade, valor_unidade, total_linha, #id_consumo → Consumo, #id_item → Menu_Item)
--**DF9:** id_consumo_item → quantidade, valor_unidade, total_linha, id_consumo, id_item
+- **DF9:** id_consumo_item → quantidade, valor_unidade, total_linha, id_consumo, id_item
 
 **Fatura**(id_fatura PK, data_hora, subtotal, iva, total_final, #id_cliente → Cliente, #id_funcionario → Funcionario)
--**DF10:** id_fatura → data_hora, subtotal, iva, total_final, id_cliente, id_funcionario
+- **DF10:** id_fatura → data_hora, subtotal, iva, total_final, id_cliente, id_funcionario
 
 **Fatura_Item**(id_fatura_item PK, quantidade, valor_unidade, total_parcial, #id_fatura → Fatura, #id_consumo_item → Consumo_Item)
--**DF11:** id_fatura_item → quantidade, valor_unidade, total_parcial, id_fatura, id_consumo_item
+- **DF11:** id_fatura_item → quantidade, valor_unidade, total_parcial, id_fatura, id_consumo_item
 
 ---
 
