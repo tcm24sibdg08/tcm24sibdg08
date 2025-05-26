@@ -37,7 +37,7 @@ Um sistema que permite:
 ## Organização do Repositório
 
 - Relatório de especificação da informação: [Docs/REI](Docs/REI)
-- Relatório de especificação da base de dados: [Docs/REBD](Docs/rebd)
+- Relatório de especificação da base de dados: [Docs/REBD](Docs/REBD)
 ---
 
 ## Tecnologias Utilizadas
