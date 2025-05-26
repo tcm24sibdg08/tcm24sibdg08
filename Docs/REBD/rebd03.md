@@ -47,26 +47,6 @@ Com base no modelo entidade-associação, derivam-se as seguintes relações:
 ## Normalização do Esquema Relacional
 
 ### 1FN - Primeira Forma Normal
-Todas as relações estão na 1FN porque:
-- Todos os atributos contêm valores atómicos.
-- Não existem grupos repetitivos nem atributos multivalorados.
-
-### 2FN - Segunda Forma Normal
-- Todas as tabelas têm **chave primária simples**.
-- Nenhum atributo não-chave depende de parte de uma chave composta (pois nenhuma tabela tem chave composta).
-→ Portanto, todas as relações estão em 2FN.
-
-### 3FN - Terceira Forma Normal
-- Não há dependências transitivas nos esquemas.
-- Todos os atributos não-chave dependem **unicamente da chave primária**.
-
-Portanto, todas as relações estão em **3FN** e não há necessidade de aplicar BCNF neste caso.
-
----
-
-## Normalização do Esquema Relacional
-
-### 1FN - Primeira Forma Normal
 - Todos os atributos contêm valores atómicos (ex.: nome, capacidade, preço_unidade);
 - Não existem grupos repetitivos nem atributos multivalorados;
 - Cada célula contém apenas um valor por atributo.
@@ -84,6 +64,7 @@ Todas as relações estão em 3FN.
 
 ### Não há necessidade de aplicar BCNF, já que não há violações.
 
+---
 
 | [< Previous](REBD02.md) | [^ Main](../../README.md) | [Next >](REBD04.md) |
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
