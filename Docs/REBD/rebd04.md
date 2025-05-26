@@ -168,7 +168,7 @@ GROUP BY
     Reserva.numero_pessoas,
     Reserva.tipo_menu,
     Restaurante.cidade;
-
+```
 ### Vista_Mesas_Reservadas_Porto
 Consultar todas as reservas do dia, do Restaurante do Porto
 
@@ -186,6 +186,7 @@ JOIN Restaurante ON Mesa.id_restaurante = Restaurante.id_restaurante
 WHERE 
     Restaurante.cidade = 'Porto'
     AND DATE(Reserva.data_hora_reserva) = CURDATE();
+```
 ---
 
 | [< Previous](rebd03.md) | [^ Main](../../README.md) | [Next >](rebd05.md) |
