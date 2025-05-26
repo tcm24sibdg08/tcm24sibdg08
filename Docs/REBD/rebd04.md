@@ -1,6 +1,6 @@
 # C4 : Esquema Relacional
 links:
-- [Relações](#relações)
+- [Relaçõesss](#relações)
 - [Restaurante](#Restaurante)
 - [Mesa](#Mesa)
 - [Cliente](#Cliente)
