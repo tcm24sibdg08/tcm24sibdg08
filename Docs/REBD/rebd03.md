@@ -56,7 +56,7 @@ Todas as relações estão na 1FN
  
 ### 2FN - Segunda Forma Normal
 - A maioria das tabelas tem chaves primárias simples (id_cliente, id_mesa, id_reserva, etc.);
-- Relações com chave composta, como Reserva_Mesa(id_reserva, id_mesa), não têm atributos adicionais → logo, não existe dependência parcial;
+- Relações com chave composta, como Reserva_Mesa(id_reserva, id_mesa), não têm atributo snão-chave → não há dependência parcial;
 
 Todas as relações estão na 2FN.
 
