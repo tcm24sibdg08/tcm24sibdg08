@@ -135,9 +135,10 @@ Itens faturados numa fatura.
 | quantidade        | Quantidade faturada     | INT NOT NULL                                                 | -           | Não        | Não  |
 | valor\_unidade    | Valor por unidade       | DECIMAL(8,2) NOT NULL                                        | -           | Não        | Não  |
 | total\_parcial    | Total parcial da linha  | DECIMAL(10,2) NOT NULL                                       | -           | Não        | Não  |
+---
 
 ## Vistas Sql:
----
+
 ---
 
 | [< Previous](rebd03.md) | [^ Main](../../README.md) | [Next >](rebd05.md) |
