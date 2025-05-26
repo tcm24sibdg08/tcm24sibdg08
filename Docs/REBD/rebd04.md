@@ -2,7 +2,7 @@
 links:
 ---
 
-## Tabelas
+## Tabelas:
 
 ### Restaurante
 
@@ -136,7 +136,7 @@ Itens faturados numa fatura.
 | valor\_unidade    | Valor por unidade       | DECIMAL(8,2) NOT NULL                                        | -           | Não        | Não  |
 | total\_parcial    | Total parcial da linha  | DECIMAL(10,2) NOT NULL                                       | -           | Não        | Não  |
 
-## Vistas Sql
+## Vistas Sql:
 ---
 ---
 
