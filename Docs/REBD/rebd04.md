@@ -16,6 +16,16 @@ Regista os restaurantes com a sua localização.
 | numero          | Número da porta              | VARCHAR(10) NOT NULL              | -           | Não        | Não  |
 | codigo\_postal  | Código Postal                | VARCHAR(10) NOT NULL              | -           | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)        |
+|------------------|
+| id_restaurante   |
+
+---
+
 ### Mesa
 
 Regista as mesas de cada restaurante, com capacidade e estado.
@@ -28,6 +38,28 @@ Regista as mesas de cada restaurante, com capacidade e estado.
 | capacidade      | Número de lugares            | INT NOT NULL                                             | -            | Não        | Não  |
 | estado          | Estado da mesa               | ENUM('Disponível','Pendente','Reservada') NOT NULL       | 'Disponível' | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)  |
+|------------|
+| id_mesa    |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome           | Coluna(s)       | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|----------------|------------------|----------------------|-----------------------------|---------|
+| mesa_fk_rest   | id_restaurante   | Restaurante           | id_restaurante              | Sim     |
+
+- **Atributos (check)**:
+
+| Nome        | Coluna(s) | Condição                                              |
+|-------------|-----------|--------------------------------------------------------|
+| chk_estado  | estado    | estado IN ('Disponível','Pendente','Reservada')       |
+
+---
+
 ### Cliente
 
 Regista os clientes com dados de contacto.
@@ -38,6 +70,16 @@ Regista os clientes com dados de contacto.
 | nome        | Nome do cliente          | VARCHAR(100) NOT NULL             | -           | Não        | Não  |
 | contacto    | Contacto do cliente      | VARCHAR(30) NOT NULL              | -           | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)   |
+|-------------|
+| id_cliente  |
+
+---
+
 ### Funcionário
 
 Regista os funcionários.
@@ -47,6 +89,16 @@ Regista os funcionários.
 | id\_funcionario | Identificador funcionário | INT, PRIMARY KEY, AUTO\_INCREMENT | -           | Sim        | Não  |
 | nome            | Nome do funcionário       | VARCHAR(100) NOT NULL             | -           | Não        | Não  |
 | cargo           | Cargo do funcionário      | VARCHAR(50) NOT NULL              | -           | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)       |
+|-----------------|
+| id_funcionario  |
+
+---
 
 ### Reserva
 
@@ -62,6 +114,29 @@ Regista as reservas feitas por clientes.
 | tipo\_menu          | Tipo de menu               | ENUM('Normal','Aniversário') NOT NULL                    | 'Normal'    | Não        | Não  |
 | data\_criacao       | Data de criação da reserva | DATETIME NOT NULL DEFAULT CURRENT\_TIMESTAMP             | NOW()       | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)     |
+|---------------|
+| id_reserva    |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome           | Coluna(s)       | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|----------------|------------------|----------------------|-----------------------------|---------|
+| reserva_fk_cli | id_cliente       | Cliente              | id_cliente                  | Sim     |
+| reserva_fk_res | id_restaurante   | Restaurante          | id_restaurante              | Sim     |
+
+- **Atributos (check)**:
+
+| Nome            | Coluna(s)  | Condição                                |
+|------------------|-------------|------------------------------------------|
+| chk_tipo_menu    | tipo_menu   | tipo_menu IN ('Normal','Aniversário')   |
+
+---
+
 ### Reserva_Mesa
 
 Relaciona as mesas usadas numa reserva (tabela associativa).
@@ -70,6 +145,23 @@ Relaciona as mesas usadas numa reserva (tabela associativa).
 | ----------- | ------------------------ | ------------------------------------------------ | ----------- | ---------- | ---- |
 | id\_reserva | Identificador da reserva | INT, FOREIGN KEY REFERENCES Reserva(id\_reserva) | -           | Não        | Não  |
 | id\_mesa    | Identificador da mesa    | INT, FOREIGN KEY REFERENCES Mesa(id\_mesa)       | -           | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)            |
+|----------------------|
+| id_reserva, id_mesa  |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome                   | Coluna(s)   | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|------------------------|-------------|----------------------|-----------------------------|---------|
+| reserva_mesa_fk_res    | id_reserva  | Reserva              | id_reserva                  | Sim     |
+| reserva_mesa_fk_mesa   | id_mesa     | Mesa                 | id_mesa                     | Sim     |
+
+---
 
 ### Menu_item
 
@@ -84,6 +176,23 @@ Itens do menu, com tipo e preço.
 | tipo\_menu     | Menu ao qual pertence | ENUM('Normal','Aniversário','Ambos') NOT NULL         | 'Normal'    | Não        | Não  |
 | preco\_unidade | Preço por unidade     | DECIMAL(8,2) NOT NULL                                 | -           | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s) |
+|-----------|
+| id_item   |
+
+- **Atributos (check)**:
+
+| Nome             | Coluna(s)   | Condição                                               |
+|------------------|-------------|---------------------------------------------------------|
+| chk_tipo_item    | tipo_item   | tipo_item IN ('Entrada','Prato','Bebida','Sobremesa') |
+| chk_tipo_menu    | tipo_menu   | tipo_menu IN ('Normal','Aniversário','Ambos')         |
+
+---
+
 ### Consumo
 
 Regista consumos feitos em reservas, por funcionário.
@@ -95,6 +204,30 @@ Regista consumos feitos em reservas, por funcionário.
 | id\_mesa          | Mesa associada           | INT, FOREIGN KEY REFERENCES Mesa(id\_mesa)               | -           | Não        | Não  |
 | id\_funcionario   | Funcionário responsável  | INT, FOREIGN KEY REFERENCES Funcionário(id\_funcionario) | -           | Não        | Não  |
 | estado\_pagamento | Estado do pagamento      | ENUM('Pendente','Parcial','Pago') NOT NULL               | 'Pendente'  | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)   |
+|-------------|
+| id_consumo  |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome              | Coluna(s)       | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|-------------------|------------------|----------------------|-----------------------------|---------|
+| consumo_fk_res    | id_reserva       | Reserva              | id_reserva                  | Sim     |
+| consumo_fk_mesa   | id_mesa          | Mesa                 | id_mesa                     | Sim     |
+| consumo_fk_func   | id_funcionario   | Funcionário          | id_funcionario              | Sim     |
+
+- **Atributos (check)**:
+
+| Nome                  | Coluna(s)        | Condição                                  |
+|-----------------------|------------------|--------------------------------------------|
+| chk_estado_pagamento  | estado_pagamento | estado_pagamento IN ('Pendente','Parcial','Pago') |
+
+---
 
 ### Consumo_Item
 
@@ -108,6 +241,23 @@ Itens consumidos numa consumação.
 | quantidade        | Quantidade consumida          | INT NOT NULL                                     | -           | Não        | Não  |
 | valor\_unidade    | Preço por unidade             | DECIMAL(8,2) NOT NULL                            | -           | Não        | Não  |
 | total\_linha      | Quantidade \* valor\_unidade  | DECIMAL(10,2) NOT NULL                           | -           | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)        |
+|------------------|
+| id_consumo_item  |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome                | Coluna(s)     | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|---------------------|----------------|----------------------|-----------------------------|---------|
+| consumo_item_fk_c   | id_consumo     | Consumo              | id_consumo                  | Sim     |
+| consumo_item_fk_i   | id_item        | Menu_Item            | id_item                     | Sim     |
+
+---
 
 ### Fatura
 
@@ -123,6 +273,23 @@ Regista as faturas emitidas.
 | iva             | Valor do IVA            | DECIMAL(5,2) NOT NULL                                    | -           | Não        | Não  |
 | total\_final    | Valor total final       | DECIMAL(10,2) NOT NULL                                   | -           | Não        | Não  |
 
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)   |
+|-------------|
+| id_fatura   |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome           | Coluna(s)       | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|----------------|------------------|----------------------|-----------------------------|---------|
+| fatura_fk_cli  | id_cliente       | Cliente              | id_cliente                  | Sim     |
+| fatura_fk_func | id_funcionario   | Funcionário          | id_funcionario              | Sim     |
+
+---
+
 ### Fatura_Item
 
 Itens faturados numa fatura.
@@ -135,6 +302,23 @@ Itens faturados numa fatura.
 | quantidade        | Quantidade faturada     | INT NOT NULL                                                 | -           | Não        | Não  |
 | valor\_unidade    | Valor por unidade       | DECIMAL(8,2) NOT NULL                                        | -           | Não        | Não  |
 | total\_parcial    | Total parcial da linha  | DECIMAL(10,2) NOT NULL                                       | -           | Não        | Não  |
+
+#### RESTRIÇÕES DE INTEGRIDADE
+
+- **Chave Primária**:
+
+| Coluna(s)        |
+|------------------|
+| id_fatura_item   |
+
+- **Referêncial (chaves estrangeiras)**:
+
+| Nome             | Coluna(s)       | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
+|------------------|------------------|----------------------|-----------------------------|---------|
+| fk_fatura        | id_fatura        | Fatura               | id_fatura                   | Não     |
+| fk_consumo_item  | id_consumo_item  | Consumo_Item         | id_consumo_item             | Não     |
+
+---
 ---
 
 ## Vistas Sql:
