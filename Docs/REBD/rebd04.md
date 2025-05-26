@@ -1,18 +1,20 @@
 # C4 : Esquema Relacional
 links:
 - [Relações](#relações)
-  - [Tabela_a](#Restaurante)
-  - [Tabela_b](#Mesa)
-  - - [Tabela_b](#Cliente)
-    - - [Tabela_b](#Funcionário)
-      - - [Tabela_b](#Reserva)
-        - - [Tabela_b](#Reserva_Mesa)
-          - - [Tabela_b](#Menu_Item)
-            - - [Tabela_b](#Consumo)
-              - - [Tabela_b](#Consumo_Item)
-                - - [Tabela_b](#Fatura)
-                  - - [Tabela_b](#Fatura_item)
-- [Vistas](#vistas)
+- [Restaurante](#Restaurante)
+- [Mesa](#Mesa)
+- [Cliente](#Cliente)
+- [Funcionário](#Funcionário)
+- [Reserva](#Reserva)
+- [Reserva_Mesa](#Reserva_Mesa)
+- [Menu_Item](#Menu_Item)
+- [Consumo](#Consumo)
+- [Consumo_Item](#Consumo_Item)
+- [Fatura](#Fatura)
+- [Fatura_item](#Fatura_item)
+- [Vistas](#Vistas Sql:)
+- [Vista_Mesas_Reservadas_Porto](#Vista_Mesas_Reservadas_Porto)
+- [Vista_Reservas_Restaurante_Porto](#Vista_Reservas_Restaurante_Porto)
 
 ---
 
