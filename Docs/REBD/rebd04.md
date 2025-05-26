@@ -1,6 +1,6 @@
 # C4 : Esquema Relacional
 links:
-- [Relaçõesss](#relações)
+- [Relações](#relações)
 - [Restaurante](#Restaurante)
 - [Mesa](#Mesa)
 - [Cliente](#Cliente)
@@ -12,7 +12,7 @@ links:
 - [Consumo_Item](#Consumo_Item)
 - [Fatura](#Fatura)
 - [Fatura_item](#Fatura_item)
-- [Vistas Sql](#Vistas Sql)
+- [Vistas Sql](#VistasSql)
 - [Vista_Reservas_Restaurante_Porto](#Vista_Reservas_Restaurante_Porto)
 - [Vista_Mesas_Reservadas_Porto](#Vista_Mesas_Reservadas_Porto)
 
