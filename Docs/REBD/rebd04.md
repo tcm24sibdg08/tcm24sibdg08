@@ -12,7 +12,7 @@ links:
 - [Consumo_Item](#Consumo_Item)
 - [Fatura](#Fatura)
 - [Fatura_item](#Fatura_item)
--[Vistas Sql](#vistas-sql)
+- [Vistas Sql](#vistas-sql)
 - [Vista_Reservas_Restaurante_Porto](#Vista_Reservas_Restaurante_Porto)
 - [Vista_Mesas_Reservadas_Porto](#Vista_Mesas_Reservadas_Porto)
 
