@@ -1,11 +1,6 @@
 # C4 : Esquema Relacional
 links:
 - [Relações](#relações)
-  - [Tabela_a](#tabela_a)
-  - [Tabela_b](#tabela_b)
-- [Vistas](#vistas)
-
-- [Relações](#relações)
   - [Restaurante](#Restaurante)
   - [Mesa](#Mesa)
   - [Cliente](#Cliente)
