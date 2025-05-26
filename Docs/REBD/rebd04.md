@@ -139,7 +139,7 @@ Itens faturados numa fatura.
 
 ## Vistas Sql:
 
-### Vista_Reservas_Restaurante1
+### Vista_Reservas_Restaurante_Porto
 Consultar todas as reservas do dia, do Restaurante do Porto
 
 ```sql
@@ -169,7 +169,23 @@ GROUP BY
     Reserva.tipo_menu,
     Restaurante.cidade;
 
-```
+### Vista_Mesas_Reservadas_Porto
+Consultar todas as reservas do dia, do Restaurante do Porto
+
+```sql
+CREATE VIEW Vista_Mesas_Reservadas_Porto AS 
+SELECT DISTINCT
+    Mesa.id_mesa,
+    Mesa.numero_mesa,
+    Mesa.capacidade
+FROM 
+    Mesa
+JOIN Reserva_Mesa ON Mesa.id_mesa = Reserva_Mesa.id_mesa
+JOIN Reserva ON Reserva_Mesa.id_reserva = Reserva.id_reserva
+JOIN Restaurante ON Mesa.id_restaurante = Restaurante.id_restaurante
+WHERE 
+    Restaurante.cidade = 'Porto'
+    AND DATE(Reserva.data_hora_reserva) = CURDATE();
 ---
 
 | [< Previous](rebd03.md) | [^ Main](../../README.md) | [Next >](rebd05.md) |
