@@ -153,3 +153,14 @@ INSERT INTO Reserva_Mesa (id_reserva, id_mesa) VALUES
 (2, 2),
 (2, 3);
 ```
+### Consultas,updates(exemplos)
+ Ver todas as reservas feitas hoje no restaurante do Porto
+ 
+```sql
+SELECT Reserva.id_reserva, Cliente.nome AS nome_cliente, Reserva.data_hora_reserva
+FROM Reserva
+JOIN Cliente ON Reserva.id_cliente = Cliente.id_cliente
+JOIN Restaurante ON Reserva.id_restaurante = Restaurante.id_restaurante
+WHERE Restaurante.cidade = 'Porto'
+  AND DATE(Reserva.data_hora_reserva) = CURDATE();
+```
