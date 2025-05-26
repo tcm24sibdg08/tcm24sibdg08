@@ -176,7 +176,7 @@ Mostrar as mesas reservadas hoje no restaurante do Porto agrupadas por reserva.
 ```sql
 SELECT 
   Reserva.id_reserva, 
-  DATE_FORMAT(Reserva.data_hora_reserva, '%H:%i:%s') AS hora_reserva,
+  Reserva.data_hora_reserva,
   GROUP_CONCAT(Mesa.numero_mesa ORDER BY Mesa.numero_mesa SEPARATOR ', ') AS mesas_reservadas
 FROM Reserva
 JOIN Reserva_Mesa ON Reserva.id_reserva = Reserva_Mesa.id_reserva
@@ -184,5 +184,9 @@ JOIN Mesa ON Reserva_Mesa.id_mesa = Mesa.id_mesa
 JOIN Restaurante ON Mesa.id_restaurante = Restaurante.id_restaurante
 WHERE Restaurante.cidade = 'Porto'
   AND DATE(Reserva.data_hora_reserva) = CURDATE()
-GROUP BY Reserva.id_reserva, hora_reserva;
+GROUP BY Reserva.id_reserva, Reserva.data_hora_reserva;
 ```
+---
+
+| [< Previous](rebd04.md) | [^ Main](../../README.md) |
+|:----------------------------------:|:----------------------------------:|
