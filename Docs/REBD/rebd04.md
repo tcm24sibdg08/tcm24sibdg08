@@ -170,14 +170,15 @@ GROUP BY
     Restaurante.cidade;
 ```
 ### Vista_Mesas_Reservadas_Porto
-Consultar todas as reservas do dia, do Restaurante do Porto
+Consultar todas as mesas reservadas no dia , do Restaurante do Porto
 
 ```sql
 CREATE VIEW Vista_Mesas_Reservadas_Porto AS 
 SELECT DISTINCT
     Mesa.id_mesa,
     Mesa.numero_mesa,
-    Mesa.capacidade
+    Mesa.capacidade,
+    Reserva.data_hora_reserva
 FROM 
     Mesa
 JOIN Reserva_Mesa ON Mesa.id_mesa = Reserva_Mesa.id_mesa
