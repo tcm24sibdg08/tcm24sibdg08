@@ -56,7 +56,7 @@ Um sistema que permite:
 - Produto:[Docs/P](Docs/P)
 - Restaurante-api:[Docs/restaurante-api](Docs/restaurante-api)
 - Postman:[Docs/Postman](Docs/Postman)
-- Sql:[Docs/sql(Docs/sql)
+- Sql:[Docs/sql](Docs/sql)
 
 README.md — Este ficheiro com a descrição geral do projeto.
 ---
