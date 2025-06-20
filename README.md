@@ -1,27 +1,42 @@
 # EatAround - Restaurantes
-O trabalho consiste no desenvolvimento de um sistema de base de dados destinado à gestão de reservas e pedidos de um restaurante com três localizações distintas. 
-
+Este projeto consiste no desenvolvimento de um sistema de base de dados para a gestão integrada de reservas e pedidos de um restaurante com três localizações distintas. O objetivo principal é resolver problemas reais enfrentados, como conflitos e sobreposições de reservas, gestão deficiente das mesas e dificuldade na associação dos consumos às reservas, tarefas que antes eram realizadas manualmente.
 
 ---
 
 ## Descrição do Problema
 
+Atualmente, o restaurante enfrenta:
 
-O objetivo principal é solucionar os problemas atuais enfrentados pelo restaurante, que incluem conflitos de reservas, duplicação de horários, dificuldade na gestão das mesas disponíveis e ineficiência na associação dos pedidos de cada mesa (que anteriormente eram realizadas à mão) e respetiva emissão de fatura. 
+- Conflitos de reservas e duplicação de horários;
+
+- Dificuldade na gestão das mesas disponíveis;
+
+- Ineficiência no registo dos consumos e emissão de faturas;
+
+- Ausência de controlo automatizado para disponibilização de mesas após uso.
 
 ---
 
 ## Solução Proposta
 
+
 Um sistema que permite:
-- Reservar mesas com base na localização, data, hora, número de pessoas e tipo de menu.
-- Reservas online pelo cliente e pelo funcionário (clientes pessoalmente)
-- Gestão de multiplas localizações
-- Atribuir automaticamente mesas em caso de grupos com mais de 8 pessoas.
-- Gerir o estado das mesas (Disponível, Pendente, Reservada).
-- Registar cada pedido por mesa e calcular automaticamente o total da conta.
-- Emitir faturas detalhadas após o pagamento.
-- Evitar reservas sobrepostas e validar automaticamente a disponibilidade.
+
+- Reservas online por clientes e funcionários, indicando restaurante, data, hora, número de pessoas, tipo de menu e, se desejado, escolha da mesa;
+
+- Gestão de múltiplas localizações;
+
+- Atribuição automática de mesas para grupos grandes;
+
+- Gestão do estado das mesas (Disponível, Pendente, Reservada);
+
+- Registo dos consumos associados a cada reserva;
+
+- Emissão automática de faturas detalhadas após pagamento;
+
+- Validação automática para evitar reservas sobrepostas e garantir a disponibilidade das mesas;
+
+- Histórico de reservas, consumos e faturação.
 
 ---
 
@@ -38,13 +53,21 @@ Um sistema que permite:
 
 - Relatório de especificação da informação: [Docs/REI](Docs/REI)
 - Relatório de especificação da base de dados: [Docs/REBD](Docs/REBD)
+- Produto:[Docs/P](Docs/P)
+- Restaurante-api:[Docs/restaurante-api](Docs/restaurante-api)
+- Postman:[Docs/Postman](Docs/Postman)
+- Sql:[Docs/sql(Docs/sql)
+
+README.md — Este ficheiro com a descrição geral do projeto.
 ---
 
 ## Tecnologias Utilizadas
 
-- Docker  
-- NodeJS  
-- MySQL  
+- Postman
+- Node.js
+- MySQL
+- LoopBack 4
+
 
 ---
 
