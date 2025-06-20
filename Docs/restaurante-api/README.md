@@ -67,6 +67,16 @@ npm run lint:fix
 npm test
 ```
 
+## Pré-requisitos
+MySQL instalado e em execução
+
+Base de dados db_g08 criada no MySQL (podes criar com CREATE DATABASE db_g08;)
+
+Importar as tabelas e dados da base:
+
+mysql -u [root/nomeutilizador] -p db_g08 < db_g08.sql
+Substitui [root/nomeutilizador] pelo teu utilizador MySQL e db_g08.sql pelo caminho do ficheiro SQL completo (que está no repositório).
+
 ## What's next
 
 Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
